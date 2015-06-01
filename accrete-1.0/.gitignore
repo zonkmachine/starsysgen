@@ -1,0 +1,3 @@
+# Exclude object files and accrete binary
+*.o
+accrete
