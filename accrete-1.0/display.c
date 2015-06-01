@@ -1,13 +1,13 @@
 #include "structs.h"
 
 void 
-display_system (void)
+display_system (char *filename)
 {
      planet_pointer node1; 
      int counter; 
 
      FILE *f;
-     f = fopen("New.System", "w");
+     f = fopen(filename, "w");
 
      fprintf(f,"                         SYSTEM  CHARACTERISTICS\n");
      fprintf(f,"Mass of central star:          %6.3f solar masses\n", stellar_mass_ratio);
@@ -105,5 +105,6 @@ display_system (void)
 	  counter++;
 	  node1 = node1->next_planet;
      }
+	printf("\nResult saved in %s.\n", filename);
         fclose(f);
 }

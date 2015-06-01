@@ -22,6 +22,7 @@ init (void)
   init_genrand(time(NULL));
 }
 
+
 void 
 generate_stellar_system (void)
 {
@@ -87,10 +88,17 @@ generate_stellar_system (void)
 
 
 int 
-main (void)
+main (int argc, char **argv)
 {
+
+  if (argc != 2) {
+	printf("Usage: %s FILE\n", argv[0]);
+	printf("Save the result of simulation of solar system planet formation in FILE.\n");
+       exit(0);
+   }
+
   init();
   generate_stellar_system();
-  display_system();
+  display_system(argv[1]);
   return 0;
 }

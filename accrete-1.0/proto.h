@@ -17,7 +17,7 @@ void accrete_dust(double *seed_mass, double a, double e, double crit_mass, doubl
 void coalesce_planetesimals(double a, double e, double mass, double crit_mass, double stellar_luminosity_ratio, double body_inner_bound, double body_outer_bound);
 planet_pointer distribute_planetary_masses(double stellar_mass_ratio, double stellar_luminosity_ratio, double inner_dust, double outer_dust);
 /* display.c */
-void display_system(void);
+void display_system(char *filename);
 /* enviro.c */
 double luminosity(double mass_ratio);
 int orbital_zone(double orbital_radius);
@@ -48,7 +48,7 @@ void iterate_surface_temp(planet_pointer *planet);
 /* main.c */
 void init(void);
 void generate_stellar_system(void);
-int main(void);
+int main(int argc, char *argv[]);
 /* mtrng.c */
 void init_genrand(unsigned long s);
 void init_by_array(unsigned long init_key[], unsigned long key_length);
